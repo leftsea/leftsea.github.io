@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>海子の店</title><meta name="author" content="leftsea"><meta name="copyright" content="leftsea"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta property="og:type" content="website">
+<meta property="og:title" content="海子の店">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="海子の店">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:author" content="leftsea">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2020-12-26 13:27:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">海子の店</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">海子の店</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/18/blood/" title="血是什么颜色 血是什么滋味">     <img class="post_bg" src="http://cloud.leftsea7.cn/blood1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="血是什么颜色 血是什么滋味"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/18/blood/" title="血是什么颜色 血是什么滋味">血是什么颜色 血是什么滋味</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-11-17T16:22:22.000Z" title="发表于 2020-11-18 00:22:22">2020-11-18</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></span></div><div class="content">血是什么颜色 血是什么滋味
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/15/dp/" title="动态规划">     <img class="post_bg" src="http://cloud.leftsea7.cn/dp2.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="动态规划"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/15/dp/" title="动态规划">动态规划</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-11-15T03:11:11.000Z" title="发表于 2020-11-15 11:11:11">2020-11-15</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">
+动态规划（英语：Dynamic programming，简称DP）是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。
+动态规划常常适用于有重叠子问题性质的问题，动态规划方法所耗时间往往远少于朴素解法。
+动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。
+通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下次需要同一个子问题解之时直接查表。这种做法在重复子问题的数目关于输入的规模呈指数增长时特别有用。——维基百科。        
+
+1. 过河卒描述
+题目描述
+
+
+ 棋盘上 AA 点有一个过河卒，需要走到目标 B 点。卒行走的规则：可以向下、或者向右。同时在棋盘上 C 点有一个对方的马，该马所在的点和所有跳跃一步可达的点称为对方马的控制点。因此称之为“马拦过河卒”。棋盘用坐标表示，A 点 (0,0)、B 点 (n,m)，同样马的位置坐标是需要给出的。
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/10/23/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-23T09:05:24.089Z" title="发表于 2020-10-23 17:05:24">2020-10-23</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server1$ hexo server
+
+More info: Server
+Generate static files1$ hexo generate
+
+More info: Generating
+Deploy to remote sites1$ hexo deploy
+
+More info: Deployment
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/17/C&amp;C++/" title="C/C++ 基础">     <img class="post_bg" src="http://cloud.leftsea7.cn/c%26c%2B%2B2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C/C++ 基础"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/17/C&amp;C++/" title="C/C++ 基础">C/C++ 基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-17T04:22:22.000Z" title="发表于 2020-10-17 12:22:22">2020-10-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/C-C/">C/C++</a></span></div><div class="content">1. 最大公约数与最小公倍数
+两个数
+输入两个数输出其最大公约数与最小公倍数
+
+辗转相除法
+
+12345678910111213#include&lt;stdio.h&gt;int main() &#123;	int x1, x2, k;	scanf(&quot;%d%d&quot;, &amp;x1, &amp;x2);	int a = x1, b = x2;	while (k=a%b) &#123;		a = b;		b = k;	&#125;	printf(&quot;%d\n&quot;, b);//输出b为最大公约数	printf(&quot;%d\n&quot;, x1/b*x2);//最小公约数为一数除以最大公约数乘另一个数	return 0;&#125;
+
+
+穷举法
+
+即先判断两个数大小，使用较小数为范围for循环递减，直至整除另一个数。同理，最小公倍数以较大数起始，直至被较小数整除。
+
+相减法
+
+1234567891011121314151617181920212223#include&lt;stdio.h&gt;//相减法 int main()&#123;	int  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/13/nnuoj/" title="呆萌呆萌地码字(就可以了">     <img class="post_bg" src="http://cloud.leftsea7.cn/nnublue.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="呆萌呆萌地码字(就可以了"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/13/nnuoj/" title="呆萌呆萌地码字(就可以了">呆萌呆萌地码字(就可以了</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-13T14:22:22.000Z" title="发表于 2020-10-13 22:22:22">2020-10-13</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E9%A2%98%E7%9B%AE/">题目</a></span></div><div class="content">1. xf2-4说能过那都是假的   这道题你只需要呆萌呆萌地把下面的代码交上去就行了，我书读的多，不会骗你地，我发4。 
+   123456789101112131415#include&lt;stdio.h&gt;#include&lt;string.h&gt;int main()&#123;    char ch[100007];    int len,ans=0;    scanf(&quot;%s&quot;,ch);    len=strlen(ch);    for(int i=0;i&lt;len;i++)    for(int j=i+1;j&lt;len;j++)        for(int k=j+1;k&lt;len;k++)            if(ch[i]==&#x27;O&#x27;&amp;&amp;ch[j]==&#x27;R&#x27;&amp;&amp;ch[k]==&#x27;Z&#x27;)                ans++;    printf(&quot;%d\n&quot;,ans);&#125;
+
+   输入一行一个仅包 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/05/sky/" title="SKY|温暖的灵魂终将相遇">     <img class="post_bg" src="http://cloud.leftsea7.cn/sky4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SKY|温暖的灵魂终将相遇"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/05/sky/" title="SKY|温暖的灵魂终将相遇">SKY|温暖的灵魂终将相遇</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-05T14:22:22.000Z" title="发表于 2020-10-05 22:22:22">2020-10-05</time></span></div><div class="content">温暖的灵魂终将相遇
+不知道自己还能坚持多久 感谢相遇</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/03/data_structure/" title="数据结构">     <img class="post_bg" src="http://cloud.leftsea7.cn/data.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/03/data_structure/" title="数据结构">数据结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-06-03T06:14:14.000Z" title="发表于 2020-06-03 14:14:14">2020-06-03</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="content">数据结构入门八大数据结构：数组、栈、队列、链表、树、散列表、堆、图
+链表链表的定义与意义链表是一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。链表由一系列结点（链表中每一个元素称为结点）组成，结点可以在运行时动态生成。每个结点包括两个部分：一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域。
+前面已经学过了数组，对于数组，用户可以直接进行定义并且对输入的数据连续存储。既然数组的已经存在，为什么还要进行链表呢，链表是一种离散存储, 简单来说，将内存中定义的数据通过一根线串联起来，每个数据都存在一个节点，数据之间不想数组的元素一样连续，彼此分散在内存单元中。
+链表的使用涉及到结构体和指针，需要对结构体指针充分地掌握。
+链表的定义n个节点离散分配，彼此通过指针相连，每个节点只有一个前驱节点，每个节点只有一个后续节点，首节点没有前驱节点，尾结点没有后续节点。
+首节点：第一个有效节点，含有数据域。尾结点：最后一个有效节点，数据域不为空，指针域NULL。头结点：第一个有效节点（首节点）之前的节点，头结点并不存放有效数据，头节点的数据类型和 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">leftsea</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/11/18/blood/" title="血是什么颜色 血是什么滋味"><img src="http://cloud.leftsea7.cn/blood1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="血是什么颜色 血是什么滋味"/></a><div class="content"><a class="title" href="/2020/11/18/blood/" title="血是什么颜色 血是什么滋味">血是什么颜色 血是什么滋味</a><time datetime="2020-11-17T16:22:22.000Z" title="发表于 2020-11-18 00:22:22">2020-11-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/15/dp/" title="动态规划"><img src="http://cloud.leftsea7.cn/dp2.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="动态规划"/></a><div class="content"><a class="title" href="/2020/11/15/dp/" title="动态规划">动态规划</a><time datetime="2020-11-15T03:11:11.000Z" title="发表于 2020-11-15 11:11:11">2020-11-15</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2020/10/23/hello-world/" title="Hello World">Hello World</a><time datetime="2020-10-23T09:05:24.089Z" title="发表于 2020-10-23 17:05:24">2020-10-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/17/C&amp;C++/" title="C/C++ 基础"><img src="http://cloud.leftsea7.cn/c%26c%2B%2B2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C/C++ 基础"/></a><div class="content"><a class="title" href="/2020/10/17/C&amp;C++/" title="C/C++ 基础">C/C++ 基础</a><time datetime="2020-10-17T04:22:22.000Z" title="发表于 2020-10-17 12:22:22">2020-10-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/13/nnuoj/" title="呆萌呆萌地码字(就可以了"><img src="http://cloud.leftsea7.cn/nnublue.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="呆萌呆萌地码字(就可以了"/></a><div class="content"><a class="title" href="/2020/10/13/nnuoj/" title="呆萌呆萌地码字(就可以了">呆萌呆萌地码字(就可以了</a><time datetime="2020-10-13T14:22:22.000Z" title="发表于 2020-10-13 22:22:22">2020-10-13</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-C/"><span class="card-category-list-name">C/C++</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">数据结构</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/"><span class="card-category-list-name">日常</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">算法</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%A2%98%E7%9B%AE/"><span class="card-category-list-name">题目</span><span class="card-category-list-count">1</span></a></li>
+            
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%85%89%E9%81%87/" style="font-size: 1.1em; color: #999">光遇</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 1.1em; color: #999">动态规划</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 1.5em; color: #99a9bf">基础</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 1.1em; color: #999">游戏</a> <a href="/tags/%E8%A1%80%E6%B6%B2/" style="font-size: 1.1em; color: #999">血液</a> <a href="/tags/%E8%AE%B0%E5%BF%86/" style="font-size: 1.1em; color: #999">记忆</a> <a href="/tags/%E9%A2%98%E7%9B%AE/" style="font-size: 1.1em; color: #999">题目</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">1</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">7</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2020-12-26T05:27:38.835Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By leftsea</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "每一天都要快乐！".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '每一天都要快乐！'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
