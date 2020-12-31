@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            height: 100vh;
+            background-color: rgb(0, 2, 19);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .rocket {
+            position: relative;
+            animation: shake 0.5s linear infinite;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateY(-2px);
+            }
+
+            50% {
+                transform: translateY(2px);
+            }
+        }
+
+        .container .rocket::after {
+            content: "";
+            width: 10px;
+            height: 150px;
+            background: linear-gradient(rgb(40, 158, 194), transparent);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -150px;
+        }
+
+        .container i {
+            width: 1px;
+            height: 30px;
+            position: absolute;
+            left: 20px;
+            top: 0px;
+            background: #fff;
+            animation: line 2s linear infinite;
+        }
+
+        @keyframes line {
+            form {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(85vh);
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+    <!-- <embed src="http://cloud.leftsea7.cn/x%20jhfly.mp3" width=0 height=0 loop="true" autostart="true"> -->
+    <audio id="myaudio" src="http://cloud.leftsea7.cn/x%20jhfly.mp3" controls="controls" autoplay loop="true"
+        hidden="true">
+    </audio>
+
+    <div class="container">
+        <div class="rocket">
+            <img src="http://cloud.leftsea7.cn/rocket.png">
+        </div>
+    </div>
+    <script>
+        // 随机数
+        function rand(m, n) {
+            return Math.ceil(Math.random() * (n - m + 1)) + m - 1;
+        }
+        let num = 40; //光线总数
+        for (let i = 0; i < num; i++) {
+            // 创建i元素
+            const i = document.createElement('i');
+            // 设置样式
+            i.style.height = rand(30, 100) + 'px';
+            i.style.left = rand(1, 99) + 'vw';
+            i.style.animationDuration = rand(5, 30) / 10 + 's';
+            // 将i插入到container元素中
+            document.querySelector('.container').appendChild(i);
+        }
+    </script>
+</body>
+
+</html>
